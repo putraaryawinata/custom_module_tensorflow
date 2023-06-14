@@ -12,7 +12,6 @@ def channel_attention_module(input_layer, filter, ratio=8):
     mlp2 = tf.keras.layers.Dense(filter)(mlp2)
 
     mlp = tf.keras.layers.Add(activation='relu')([mlp1, mlp2])
-    mlp = tf.nn.relu(mlp)
     return tf.keras.layers.Multiply()([input_layer, mlp])
 
 def spatial_attention_module(input_layer, kernel_size=7):
